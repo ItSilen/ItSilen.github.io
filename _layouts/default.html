@@ -8,10 +8,14 @@
 
   <title>Document</title>
 
-  <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-  <link rel="stylesheet"  href="https://itsilen.github.io/onHtmlMode/bootstrap/css/bootstrap.css">
   <script type="text/javascript" src="https://itsilen.github.io/onHtmlMode/bootstrap/js/jquery.js"></script>
-  <script type="text/javascript" src="https://itsilen.github.io/onHtmlMode/bootstrap/js/bootstrap.js"></script>
+ 
+  <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
@@ -19,6 +23,10 @@
 
 </head>
 <body>
+
+   <div id="menu">
+      <p > {% include index.html %}</p>
+    </div>
 
   <!-- 超大屏幕 -->
   <div class="jumbotron ">
@@ -46,20 +54,20 @@
     <div class="col-md-9 col-xs-12 right">
       <div  id="tabs">
           <ul>
-            <li><a href="#tabs-1">文档目录</a></li>
+            <li><a href="#tabs-1" onclick="getMenu()">文档目录</a></li>
             <li><a href="#tabs-2">关于我</a></li>
             <li><a href="#tabs-3">技能树</a></li>
           </ul>
           <div id="tabs-1">
 
-            <p> {{content}}
-            </p>
+            <p > {{content}}</p>
           </div>
           <div id="tabs-2" >
             <p>
               {% include profile-201702.html %}
             </p>
           </div>
+ 
           <div id="tabs-3">
             <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
             <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p> <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
@@ -71,19 +79,29 @@
     </div>
   </div>
 
+
+
+<div class="btn-group-vertical" role="group" id="bttop" aria-label="...">
+  <button type="button" class="btn btn-default"><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Top</a></button>
+  <button type="button" class="btn btn-default"  id="tab-list" ><a href="#footer"><span class="
+glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>Bottom</a></button>
+</div>
+   
   <!-- 页脚 -->
-  <div class="footer">
+  <div id="footer">
       Posted by: Silen,
           Contact information: 
       <a href="mailto:{{site.email}}">email.</a>
   </div>
 
   <script>
-
+  var menu = document.getElementById("menu").innerHTML;
     $( function() {
       $( "#tabs" ).tabs();
     } );
-    
+    function getMenu(){
+       document.getElementById("tabs-1").innerHTML= menu;
+    }
   </script>
 
 </body>
