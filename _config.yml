@@ -19,7 +19,7 @@ email: 13542508571@139.com
 description: > # this means to ignore newlines until "baseurl:"
     
 
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "https://itsilen.github.io" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: Silen
 github_username:  ItSilen
