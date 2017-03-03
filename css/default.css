@@ -9,8 +9,5 @@ body{min-height: 100%;position: relative;padding-bottom: 40px;background: url("/
 .cont .left-body{height: 500px;}
 .cont .panel-default{margin: 0;}
 #bttop{position: fixed;right: 0;top:70%;}
-#bttop a:focus{text-decoration: none;}
-#bttop a:hover{text-decoration: none;}
-#bttop a:visited{text-decoration: none;}
 #footer{width: 100%;line-height: 40px; background-color:#1828fc ;position:absolute;bottom: 
   0px; text-align: center;opacity:0.6;color:white;font-weight: bold;}
