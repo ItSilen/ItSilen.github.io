@@ -3,8 +3,14 @@ html{height: 100%;}
 #menu{display: none;}
 body{min-height: 100%;position: relative;padding-bottom: 40px;background: url("/images/14.jpg") no-repeat fixed;background-size:cover;}
 .jumbotron{background-color:#1828fc ;opacity:0.6; height: 120px;padding: 5px 20px;margin-bottom: 10px;color:white;}
-.cont{margin: 10px auto; /*border: 1px solid red;*/}
-.cont .left{padding: 0 20px 0 0;}
+.cont{margin: 10px 0;padding: 0; /*border: 1px solid red;*/}
+@media screen and (max-width: 992px) {
+	.cont .left{padding: 0;margin: 0}
+}
+@media screen and (min-width: 992px) {
+	.cont .left{padding: 0 20px 0 0;margin: 0}
+}
+.cont .contcol{padding: 0; /*border: 1px solid red;*/}
 .cont .right{padding: 0;}
 .cont .left-body{height: 500px;}
 .cont .panel-default{margin: 0;}
