@@ -2,8 +2,8 @@
 title: XILIN博客
 email: 13542508571@139.com
 description: Source of me.
-localurl:  # the subpath of your site, e.g. /blog/
-url: http://ItSilen.github.io # the base hostname & protocol for your site
+localurl: "" # the subpath of your site, e.g. /blog/
+url: https://ItSilen.github.io # the base hostname & protocol for your site
 # me-img: "/img/HeadPicture.png"
 
 twitter_username:
@@ -16,19 +16,19 @@ permalink: /:categories/:year/:month/:day/:title
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 highlighter: pygments
 
-assets: http://ItSilen.github.io/assets
-baseurl: http://ItSilen.github.io
-# baseurl: ""
-# assets: assets
-# production_url: http://ItSilen.github.io
+# assets: https://ItSilen.github.io/assets
+# baseurl: https://ItSilen.github.io
+baseurl: ""
+assets: /assets
 
 # pagination
-paginate: 6
+paginate: 10
 
 # Markdown Processors
-kramdown: ##redcarpet
+kramdown: ## redcarpet
 redcarpet:
   extensions:
+    - jacman
     - hard_wrap
     - no_intra_emphasis
     - autolink
@@ -62,6 +62,7 @@ widgets:
 ## provide seven widgets:category,tag,rss,archive,tagcloud,links,weibo,douban
 
 
+
 #### RSS
 rss: /atom.xml ## RSS address.
 
@@ -91,7 +92,7 @@ author:
   weibo_verifier: d15bdf8d ## e.g. b3593ceb Your weibo-show widget verifier ,if you use weibo-show it is needed.
   tsina: 6314640665 ## e.g. 2176287895  Your weibo ID,It will be used in share button.
   douban:     ## e.g. wuchong1014 or your id for https://www.douban.com/people/wuchong1014
-  zhihu: Silen     ## e.g. jark  for http://www.zhihu.com/people/jark
+  zhihu: silen-90-7     ## e.g. jark  for http://www.zhihu.com/people/jark
   email: 13542508571@139.com     ## e.g. imjark@gmail.com
   twitter:    ## e.g. jarkwu for https://twitter.com/jarkwu
   github: ItSilen    ## e.g. wuchong for https://github.com/wuchong
@@ -155,7 +156,7 @@ google_cse:
 baidu_search:  ## http://zn.baidu.com/
   enable: true
   id: ## e.g. "783281470518440642"  for your baidu search id
-  site: http://zhannei.baidu.com/cse/site ##http://zhannei.baidu.com/cse/search  ## your can change to your site instead of the default site
+  site: https://zhannei.baidu.com/cse/site ##http://zhannei.baidu.com/cse/search  ## your can change to your site instead of the default site
 
 tinysou_search:     ## http://tinysou.com/
   enable: false
@@ -164,4 +165,6 @@ tinysou_search:     ## http://tinysou.com/
 plugins:
  - jemoji
  - jekyll-paginate
+ - jekyll-sitemap
  # - vdm
+ # 

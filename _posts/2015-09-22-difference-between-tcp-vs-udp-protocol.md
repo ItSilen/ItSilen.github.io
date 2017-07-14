@@ -62,4 +62,4 @@ excerpt: 主要从连接性(Connectivity)、可靠性(Reliability)、有序性(O
  
 ---
  
-*本文转自：<http://liangjiabin.com/blog/2015/03/difference-between-tcp-vs-udp-protocol.html>*
+*本文转自：http://www.cnblogs.com/-wang-cheng/p/5421988.html*
