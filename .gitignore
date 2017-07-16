@@ -2,7 +2,6 @@ _site/
 .sass-cache/
 .idea
 .idea/
-_includes
 _layouts
 _sass
 about

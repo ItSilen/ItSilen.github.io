@@ -16,10 +16,10 @@ permalink: /:categories/:year/:month/:day/:title
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 highlighter: pygments
 
-assets: https://ItSilen.github.io/assets
-baseurl: https://ItSilen.github.io
-# baseurl: ""
-# assets: /assets
+# assets: https://ItSilen.github.io/assets
+# baseurl: https://ItSilen.github.io
+baseurl: ""
+assets: /assets
 
 # pagination
 paginate: 10
