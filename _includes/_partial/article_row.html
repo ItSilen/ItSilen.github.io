@@ -1,9 +1,17 @@
-{% if page.type == 'archives' %}
-<section class="post {{ item.date | date: "%Y-%m" }}" itemscope itemprop="blogPost">
-{% elsif page.type == 'categories' %}
-<section class="post {% for category in item.categories %}{{ category }} {% endfor %}" itemscope itemprop="blogPost">
-{% elsif page.type == 'tags' %}
-<section class="post {% for tag in item.tags %}{{ tag }} {% endfor %}" itemscope itemprop="blogPost">
+{% if page.layout == 'archives' %}
+<section class="post post-archive-hook {{ item.date | date: '%Y-%m' }}" 
+         data-date="{{ item.date | date: '%Y-%m' }}"
+         itemscope itemprop="blogPost">
+{% elsif page.layout == 'categories' %}
+<section class="post post-category-hook {% for category in item.categories %}{{ category }} {% endfor %}" 
+         data-category="{% for category in item.categories %}{{ category }} {% endfor %}"   
+         style="display: none;" 
+         itemscope itemprop="blogPost">
+{% elsif page.layout == 'tags' %}
+<section class="post post-tag-hook {% for tag in item.tags %}{{ tag }} {% endfor %}"
+         data-tag="{% for tag in item.tags %}{{ tag }} {% endfor %}" 
+         style="display: none;" 
+         itemscope itemprop="blogPost">
 {% else %}
 <section class="post" itemscope itemprop="blogPost">
 {% endif %}
@@ -11,7 +19,8 @@
   {% if item.link %}
     <a href="{{ item.link }}" target="_blank"> 
   {% else %}
-    <a href="{{ site.baseurl }}{{ item.url }}" title="{{ item.title }}" itemprop="url">
+    <a href="{{ site.baseurl }}{{ item.url }}" 
+      title="{{ item.title }}" itemprop="url">
   {% endif %}
 
     <time datetime="{{ item.date }}" itemprop="datePublished">{{ item.date | date: "%Y 年 %m 月" }}</time>
@@ -21,3 +30,8 @@
 
   </a>
 </section>
+
+
+
+    
+    

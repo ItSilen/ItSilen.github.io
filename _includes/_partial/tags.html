@@ -1,0 +1,48 @@
+
+{% if page.layout == 'tags' %}
+{% assign title = '标签' %}
+{% assign icon = 'tag' %}
+{% endif %}
+
+
+<div class="archive-title" >
+<h2 class="{{ icon }}-icon"><span class='archive-folder'>{{ title }}</span></h2>
+
+
+        <ul class="archive-list">
+            <div class="archiveslist archive-float clearfix">
+                {% for tag in site.tags %}
+                <li class="archive-list-item" style="display:none;">
+                <a class="archive-list-link tag-hook"  href="#{{ tag[0] }}">{{ tag[0] }}{{title}}</a>
+                <span class="archive-list-count">{{ tag[1] | size }}</span>
+                </li>
+                {% endfor %}
+                 
+         </div>
+         </ul>
+
+ 
+ 
+</div>
+<div id="main" class="archive-part clearfix">
+    <div id="archive-page">
+    {% for post in site.posts %}
+    {% assign item = post %}
+    {% assign index = true %}
+    {% include _partial/article_row.html %}
+    {% endfor %}
+
+    </div>
+</div>
+<script>
+
+   winHref  = window.location.href
+    var aAll = document.getElementsByClassName("tag-hook");
+    for (i in aAll) {
+        if (aAll[i].href === winHref) {
+            aAll[i].parentNode.style.display = "block"
+        }
+    }
+
+
+</script>

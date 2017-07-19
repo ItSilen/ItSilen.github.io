@@ -2,9 +2,9 @@
 published: true
 layout: post
 title: 在python中使用sqlite的时候应注意防止注入攻击
-category: python
+categories: [python, 数据库]
 tags: 
-  - sql
+  - 安全
 time: 2016.08.19 14:19:00
 excerpt: 在python的文档中有大概这样一段描述：在使用sql语句操纵数据库的时候，不应该直接将字符串连接起来作为sql语句进行查询，因为直接将外部传入的字符串代入到sql语句中就会产生sql注入的问题。
 

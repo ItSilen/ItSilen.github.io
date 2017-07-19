@@ -2,9 +2,9 @@
 published: true
 layout: post
 title: jekyll的windows安装
-category: jekyll
+categories: jekyll
 tags: 
-  - jekyll
+  - 安装
 time: 2017.02.26 22:32:00
 excerpt: jekyll的windows安装过程
 

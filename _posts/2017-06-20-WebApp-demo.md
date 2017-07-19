@@ -2,12 +2,10 @@
 published: true
 layout: post
 title: webapp-demo
-category: [zeptojs, WebApp,html5, canvas, photoshop]
+categories: [zeptojs, WebApp,html5, canvas,JavaScript, photoshop]
 tags: 
-  - zeptojs
-  - WebApp
-  - canvas
-  - photoshop
+  - 相册
+  - 贺卡
 time: 2017.06.20 11:39:23
 excerpt: 用zepto制作的在线相册。一个新年贺卡demo
 

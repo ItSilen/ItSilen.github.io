@@ -2,10 +2,9 @@
 published: true
 layout: post
 title: react-gallery-相册
-category: [react, webpack]
+categories: [react, webpack, JavaScript]
 tags: 
-  - react
-  - webpack
+  - 相册
 time: 2017.04.22 16:03:53
 excerpt: React首次被提出是在2014年的f8大会上，f8是由facebook组织的一个年度的技术峰会，目标听众是从事web周边产品和服务的开发者及企业，之所以叫f8是因为fb内部编程马拉松是限制在8小时以内的，就看大家在8小时以内能做出哪些有意思的东西
 

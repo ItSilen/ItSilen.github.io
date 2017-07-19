@@ -1,108 +1,133 @@
-<!--
-<%
-var title = '';
-var icon = '';
-if (page.category){
-  title = page.category;
-  icon = 'category';
-};
-if (page.tag){
-  title = page.tag;
-  icon = 'tag';
-};
-if (page.archive){
-  icon = 'archive';
-  if (page.year) title = page.year+  (page.month ? '/' + page.month : '');
-  else title = __('archive_a');
-};
-%>
--->
 
-{% if page.type == 'archives' %}
+
+{% if page.layout == 'archives' %}
 {% assign title = '归档' %}
 {% assign icon = 'archive' %}
 {% endif %}
 
-{% if page.type == 'categories' %}
+{% if page.layout == 'categories' %}
 {% assign title = '分类' %}
 {% assign icon = 'category' %}
 {% endif %}
 
-{% if page.type == 'tags' %}
+{% if page.layout == 'tags' %}
 {% assign title = '标签' %}
 {% assign icon = 'tag' %}
 {% endif %}
 
 <div class="archive-title" >
-  <h2 class="{{ icon }}-icon"><span class='archive-folder'>{{ title }}</span></h2>
-  {% if page.type == 'archives' %}
-  <div class="archiveslist archive-float clearfix">
-    {% assign count = 1 %}
-    {% for post in site.posts  %}
-    {% capture this_date %}{{ post.date }}{% endcapture %}
-    {% capture next_date %}{{ post.previous.date }}{% endcapture %}
-    {% capture this_date_str %}{{ this_date | date: "%Y-%m" }}{% endcapture %}
-    {% capture next_date_str %}{{ next_date | date: "%Y-%m" }}{% endcapture %}
-    {% if this_date_str != next_date_str %}
-    <ul class="archive-list">
-    <li class="archive-list-item">
-    <a class="archive-list-link" href="#{{ this_date | date: "%Y-%m" }}">{{ this_date | date: "%Y 年 %m 月" }}</a>
-    <span class="archive-list-count">{{ count }}</span>
-    {% assign count = 1 %}
-    {% else %}
-    {% assign count = count | plus: 1 %}
+    <h2 class="{{ icon }}-icon"><span class='archive-folder'>{{ title }}</span></h2>
+
+    {% if page.layout == 'archives' %}
+        <div class="archiveslist archive-float clearfix">
+            {% assign count = 1 %}
+            {% for post in site.posts    %}
+            {% capture this_date %}{{ post.date }}{% endcapture %}
+            {% capture next_date %}{{ post.previous.date }}{% endcapture %}
+            {% capture this_date_str %}{{ this_date | date: "%Y-%m" }}{% endcapture %}
+            {% capture next_date_str %}{{ next_date | date: "%Y-%m" }}{% endcapture %}
+            {% if this_date_str != next_date_str %}
+            <ul class="archive-list">
+            <li class="archive-list-item " >
+            <a class="archive-list-link archive-list-hook"  href="#{{ this_date | date: "%Y-%m" }}">{{ this_date | date: "%Y 年 %m 月" }}</a>
+            <span class="archive-list-count">{{ count }}</span>
+            {% assign count = 1 %}
+            {% else %}
+            {% assign count = count | plus: 1 %}
+            {% endif %}
+            </li>
+            {% endfor %}
+            </ul>
+        </div>
     {% endif %}
-        
-    </li>
-    {% endfor %}
-    </ul>
- </div>
-  {% endif %}
-  {% if page.type == 'categories' %}
-  
-  <ul class="archive-list">
-  <div class="archiveslist archive-float clearfix">
-    {% for category in site.categories  %}
-    <li class="archive-list-item">
-    <a class="archive-list-link" href="#{{ category[0] }}">{{ category[0] }}</a>
-    <span class="archive-list-count">{{ category[1] | size }}</span>
-    </li>
-    {% endfor %}
- </div>
- </ul>
- {% endif %}
+
+    {% if page.layout == 'categories' %}
+        <ul class="archive-list">
+            <div class="archiveslist archive-float clearfix">
+                {% for category in site.categories    %}
+                <li class="archive-list-item" style="display:none;">
+                <a class="archive-list-link category-hook"    href="#{{ category[0] }}">{{ category[0] }}</a>
+                <span class="archive-list-count">{{ category[1] | size }}</span>
+                </li>
+                {% endfor %}
+         </div>
+         </ul>
+    {% endif %}
  
-  {% if page.type == 'tags' %}
-  
-  <ul class="archive-list">
-  <div class="archiveslist archive-float clearfix">
-    {% for tag in site.tags  %}
-    <li class="archive-list-item">
-    <a class="archive-list-link" href="#{{ tag[0] }}">{{ tag[0] }}</a>
-    <span class="archive-list-count">{{ tag[1] | size }}</span>
-    </li>
-    {% endfor %}
- </div>
- </ul>
- {% endif %}
- 
+    {% if page.layout == 'tags' %}
+        <ul class="archive-list">
+            <div class="archiveslist archive-float clearfix">
+                {% for tag in site.tags    %}
+                <li class="archive-list-item" style="display:none;">
+                <a class="archive-list-link tag-hook" href="#{{ tag[0] }}">{{ tag[0] }}</a>
+                <span class="archive-list-count">{{ tag[1] | size }}</span>
+                </li>
+                {% endfor %}
+         </div>
+         </ul>
+     {% endif %}
 </div>
+
 <div id="main" class="archive-part clearfix">
-  <div id="archive-page">
-  {% for post in site.posts %}
-  {% assign item = post %}
-  {% assign index = true %}
-  {% include _partial/article_row.html %}
-  {% endfor %}
-<!--
-<% if (page.total > 1){ %>
-  <nav id="page-nav" class="clearfix archive-nav">
-    <%- paginator({
-      prev_text: '<span></span>Prev',
-      next_text: 'Next<span></span>'
-    }) %>
-  </nav>
-<% } %>
--->
-  </div>
+    <div id="archive-page">
+    {% for post in site.posts %}
+    {% assign item = post %}
+    {% assign index = true %}
+    {% include _partial/article_row.html %}
+    {% endfor %}
+    </div>
 </div>
+
+<script>
+
+    var winHref  = window.location.href
+    var cAll = document.getElementsByClassName("category-hook");
+    for (var i=0;i<cAll.length;i++) {
+        if (cAll[i].href === winHref) {
+            cAll[i].parentNode.style.display = "block"
+        }
+    }
+
+    var tAll = document.getElementsByClassName("tag-hook");
+    for (var i=0;i<tAll.length;i++ ) {
+        if (tAll[i].href === winHref) {
+            tAll[i].parentNode.style.display = "block"
+        }
+    }
+
+    var winHash  = window.location.hash;
+    var postCatAll = document.getElementsByClassName("post-category-hook") ;
+    for (var i=0;i<postCatAll.length;i++ ) {
+        if (postCatAll[i].dataset.category.indexOf(winHash.substr(1)) !== -1) {
+            postCatAll[i].style.display = "block";
+        } 
+    }
+
+    var postTagAll = document.getElementsByClassName("post-tag-hook") ;
+    for (var i=0;i<postTagAll.length;i++ ) {
+        if (postTagAll[i].dataset.tag.indexOf(winHash.substr(1)) !== -1) {
+            postTagAll[i].style.display = "block";
+        } 
+    }
+
+    var aAll = document.getElementsByClassName("archive-list-hook");
+    var postArcAll = document.getElementsByClassName("post-archive-hook") ;
+    for (var i=0;i<aAll.length;i++ ) {
+        aAll[i].onclick = function() {
+            for (var j=0;j<aAll.length;j++ ){
+                aAll[j].parentNode.style.display = "none";
+            }
+            for (var k = 0; k < postArcAll.length; k++) {
+                if (this.href.indexOf(postArcAll[k].dataset.date) != -1) {
+                    postArcAll[k].style.display = "block";
+                } else {
+                    postArcAll[k].style.display = "none";
+                }
+            }
+            this.parentNode.style.display = "block";
+        }
+        
+    }
+
+
+</script>
