@@ -4,8 +4,7 @@ layout: post
 title: HTTP与HTTPS的区别
 categories: network
 tags: 
-  - HTTP
-  - HTTPS
+  - 网络协议
   - 跨域
 time: 2016.04.19 11:21:00
 excerpt: HTTP与HTTPS的区别

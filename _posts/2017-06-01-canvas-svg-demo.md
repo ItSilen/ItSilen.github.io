@@ -4,11 +4,9 @@ layout: post
 title: canvas-svg-demo
 categories: [canvas, svg, html5, JavaScript]
 tags: 
-  - 时钟
-  - 图像转换
-  - 星星
-  - 月亮
-  - 灯塔
+  - 图形
+  - 图像
+
 time: 2017.06.01 20:20:23
 excerpt: 一个canvas时钟，canvas系列帧动画，通过imageData转换图像，svg制作的一个海上灯塔
 

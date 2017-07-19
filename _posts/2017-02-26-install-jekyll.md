@@ -4,7 +4,7 @@ layout: post
 title: jekyll的windows安装
 categories: jekyll
 tags: 
-  - 安装
+  - 工具
 time: 2017.02.26 22:32:00
 excerpt: jekyll的windows安装过程
 

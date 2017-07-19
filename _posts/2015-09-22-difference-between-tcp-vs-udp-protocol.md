@@ -4,8 +4,8 @@ layout: post
 title: TCP 和 UDP 的区别
 categories: network
 tags: 
-  - tcp
-  - udp
+  - 网络协议
+ 
 time: 2016.02.6 14:22:00
 excerpt: 主要从连接性(Connectivity)、可靠性(Reliability)、有序性(Ordering)、有界性(Boundary)、拥塞控制(Congestion or Flow control)、传输速度(Speed)、量级(Heavy/Light weight)、头部大小(Header size)等8个方面来讲。
 

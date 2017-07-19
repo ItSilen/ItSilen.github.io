@@ -4,8 +4,10 @@ layout: post
 title: webapp-demo
 categories: [zeptojs, WebApp,html5, canvas,JavaScript, photoshop]
 tags: 
-  - 相册
-  - 贺卡
+  - 图像
+  - 图形
+  - js库
+  - 工具
 time: 2017.06.20 11:39:23
 excerpt: 用zepto制作的在线相册。一个新年贺卡demo
 

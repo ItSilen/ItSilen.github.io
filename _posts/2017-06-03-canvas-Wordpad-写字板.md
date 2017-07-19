@@ -4,7 +4,8 @@ layout: post
 title: canvas-Wordpad-写字板
 categories: [canvas, jquery, WebApp, html5]
 tags: 
-  - 写字板
+  - 图形
+  - js库
 time: 2017.06.03 12:04:00
 excerpt: 利用canvas技术与jquery制作的一个简单写字板。
 

@@ -23,7 +23,7 @@
 var winHash = window.location.hash;
 var winHref = window.location.href;
 var sBar = document.getElementById("asidepart");
-if (!winHash && !(winHref.indexOf("/archives/") !== -1)) {
+if ((winHash==="#more" || !winHash ) && (winHref.indexOf("/archives/") === -1) ) {
     sBar.style.display = "block";
 }
 
